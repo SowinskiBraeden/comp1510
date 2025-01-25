@@ -1,0 +1,5 @@
+# Test files
+src/test/*
+
+# class files
+bin/*
