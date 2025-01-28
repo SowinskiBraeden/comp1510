@@ -34,8 +34,10 @@ public class FunWithStrings {
         // Very clean code here -- checkstyle
         int len = trimmedBook.length();
         String upperFirst = trimmedBook.substring(0, 1).toUpperCase();
-        String middleLow = trimmedBook.substring(1, len - 1);
+        String middleLow = trimmedBook.substring(1, len - 1).toLowerCase();
         String upperLast = trimmedBook.substring(len - 1, len).toUpperCase();
         System.out.printf("Finally: %s\n", upperFirst + middleLow + upperLast);
+
+        // scan.next() returns the next token
     }
 }

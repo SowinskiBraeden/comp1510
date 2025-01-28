@@ -30,7 +30,7 @@ public class Distance {
         x2 = scan.nextDouble();
         System.out.print("Enter y2 coord: ");
         y2 = scan.nextDouble();
-
+        
         scan.close();
         
         double distance = Math.sqrt(Math.pow((x2 - x1), 2) 
