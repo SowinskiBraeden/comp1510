@@ -1,4 +1,4 @@
-package lab0;
+package dev.sowinski.comp1510.lab0;
 
 /**
  * HelloWorld prints hello world.

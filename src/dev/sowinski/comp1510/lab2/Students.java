@@ -1,4 +1,4 @@
-package lab2;
+package dev.sowinski.comp1510.lab2;
 
 /**
  * Students prints a table of student info.

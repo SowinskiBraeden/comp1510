@@ -1,4 +1,4 @@
-package lab1;
+package dev.sowinski.comp1510.lab1;
 
 /**
  * Simple talk about valid variable identifiers.

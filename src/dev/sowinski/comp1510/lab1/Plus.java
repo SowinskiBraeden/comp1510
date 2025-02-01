@@ -1,4 +1,4 @@
-package lab1;
+package dev.sowinski.comp1510.lab1;
 
 /**
 * Plus demonstrates the different behaviours of the + operator.

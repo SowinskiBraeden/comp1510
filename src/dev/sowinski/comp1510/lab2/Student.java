@@ -1,4 +1,4 @@
-package lab2;
+package dev.sowinski.comp1510.lab2;
 
 /**
  * Student holds information of a student.

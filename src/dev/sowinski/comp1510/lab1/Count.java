@@ -1,4 +1,4 @@
-package lab1;
+package dev.sowinski.comp1510.lab1;
 
 /**
 * This program prints out 1 to 5 in three languages.

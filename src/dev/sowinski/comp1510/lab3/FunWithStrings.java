@@ -1,4 +1,4 @@
-package lab3;
+package dev.sowinski.comp1510.lab3;
 
 import java.util.Scanner;
 
@@ -29,7 +29,7 @@ public class FunWithStrings {
         System.out.printf("Starts with \"The\": %b\n", 
                 book.toLowerCase().startsWith("the "));
         System.out.printf("Title uppercased: %s\n", book.toUpperCase());
-        System.out.printf("Title: %s\n", book);
+        System.out.printf("Title lowercased: %s\n", book.toLowerCase());
         
         // Very clean code here -- checkstyle
         int len = trimmedBook.length();

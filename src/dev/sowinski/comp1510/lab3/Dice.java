@@ -1,4 +1,4 @@
-package lab3;
+package dev.sowinski.comp1510.lab3;
 
 /**
  * Dice simulate dice rolling.
