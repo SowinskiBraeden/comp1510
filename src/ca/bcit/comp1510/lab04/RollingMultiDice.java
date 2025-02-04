@@ -1,5 +1,7 @@
 package ca.bcit.comp1510.lab04;
 
+import java.util.Scanner;
+
 /**
  * RollingMultiDice test the modified MultiDie class.
  * 
@@ -13,11 +15,17 @@ public class RollingMultiDice {
      * @param args cli input unused
      */
     public static void main(String[] args) {
-        final int numSides = 12;
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Enter number of sides: ");
+        int numSides = scan.nextInt();
+        scan.close();
         
         MultiDie die = new MultiDie(numSides);
         
-        System.out.println(die.max);
+        System.out.println("Die Max:            " + die.max);
+        System.out.println("Initial Face value: " + die.getFaceValue());
+        System.out.println("Random Roll:        " + die.roll());
+        
         /*
          * 1. Do you need getters and setters for max? Should you have them?
          * 
