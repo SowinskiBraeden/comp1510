@@ -21,25 +21,31 @@ public class Student {
     /** birthYear student year of birth as int. */
     private int birthYear;
     
+    /** studentNumber student id number. */
+    private String studentNumber;
+    
     /** gpa student GPA as int. */
-    private float gpa;
+    private int gpa;
     
     /**
      * Student constructor.
      * @param first student firstname
      * @param last student lastname
      * @param yearOfBirth student birth year
+     * @param id student number
      * @param studentGPA student gpa
      */
     public Student(
             String first, 
             String last, 
-            int yearOfBirth, 
-            float studentGPA
+            int yearOfBirth,
+            String id,
+            int studentGPA
     ) {
         firstName = first;
         lastName = last;
         birthYear = yearOfBirth;
+        studentNumber = id;
         gpa = studentGPA;
     }
 
@@ -95,7 +101,7 @@ public class Student {
      * getGPA returns student GPA.
      * @return the gpa
      */
-    public float getGPA() {
+    public int getGradeAverage() {
         return gpa;
     }
 
@@ -103,8 +109,24 @@ public class Student {
      * setGPA update student GPA.
      * @param newGPA the gpa to set
      */
-    public void setGPA(float newGPA) {
+    public void setGradeAverage(int newGPA) {
         this.gpa = newGPA;
+    }
+ 
+    /**
+     * getStudentNumber return student id number.
+     * @return studentNumber as string
+     */
+    public String getStudentNumber() {
+        return studentNumber;
+    }
+    
+    /**
+     * setStudentNumber updates student id number.
+     * @param studentNumber new student id number
+     */
+    public void setStudentNumber(String studentNumber) {
+        this.studentNumber = studentNumber;
     }
     
     /**
@@ -113,8 +135,9 @@ public class Student {
      */
     public String toString() {
         return firstName + " "
-                + lastName + " ("
-                + birthYear + ") "
-                + gpa + " GPA";
+                + lastName + " "
+                + birthYear + " "
+                + studentNumber + " "
+                + gpa;
     }
 }
