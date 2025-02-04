@@ -1,4 +1,4 @@
-package dev.sowinski.comp1510.strings;
+package dev.sowinski.strings;
 
 import java.io.IOException;
 import java.io.PrintWriter;
