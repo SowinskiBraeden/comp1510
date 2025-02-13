@@ -25,7 +25,7 @@ public class GeometryDriver {
         System.out.print("Enter z coord: ");
         int z = scan.nextInt();
 
-        Sphere sphere = new Sphere(x, y, z, r);        
+        Sphere sphere = new Sphere(x, y, z, r);
         System.out.println("Created Sphere at    " + sphere.toString() + "\n"
                          + "Sphere Surface Area: " + sphere.surfaceArea() + "\n"
                          + "Sphere Volume:       " + sphere.volume() + "\n"
