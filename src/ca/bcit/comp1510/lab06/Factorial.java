@@ -46,17 +46,13 @@ public class Factorial {
         
         int number = readPositiveInt();
         
-        if (number == 0) {
-            System.out.println("The factorial of 0 is 1.");
-        } else {
-            int product = 1;
-            for (int i = 2; i <= number; i++) {
-                product *= i;
-            }
-            System.out.println("The factorial of " 
-                        + number + " is "
-                        + product + "."
-            );
+        int product = 1;
+        for (int i = 2; i <= number; i++) {
+            product *= i;
         }
+        System.out.println("The factorial of " 
+                    + number + " is "
+                    + product + "."
+        );
     }
 }
