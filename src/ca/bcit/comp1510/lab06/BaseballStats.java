@@ -45,10 +45,32 @@ public class BaseballStats {
             int walks = 0;
             while (lineScan.hasNext()) {
                 String current = lineScan.next();
-                hits += current.equals("h") ? 1 : 0;
-                outs += current.equals("o") ? 1 : 0;
-                sacs += current.equals("s") ? 1 : 0;
-                walks += current.equals("w") ? 1 : 0;
+                
+                
+                switch (current) {
+                    case "h": 
+                        hits += 1;
+                        break;
+                    case "o": 
+                        outs += 1;
+                        break;
+                    case "s": 
+                        sacs += 1;
+                        break;
+                    default: 
+                        walks += 1;
+                        break;
+                }
+
+                /*
+                 * Lab instructors want you to use switch 
+                 * statements as seen above
+                 *
+                 * hits += current.equals("h") ? 1 : 0;
+                 * outs += current.equals("o") ? 1 : 0;
+                 * sacs += current.equals("s") ? 1 : 0;
+                 * walks += current.equals("w") ? 1 : 0;
+                */
             }
 
             System.out.print(hits + " hits, "
