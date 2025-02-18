@@ -46,19 +46,27 @@ public class BaseballStats {
             while (lineScan.hasNext()) {
                 String current = lineScan.next();
                 
-                
+                /* 
+                 * Personally I don't think a switch statement
+                 * is needed for this part of the lab.
+                 * 
+                 * At this scale its an unnecessary optimization
+                 * that wastes lines of code. A simple if else chain.
+                 * 
+                 * or in my case, ternary operators will do just fine.
+                 */
                 switch (current) {
                     case "h": 
-                        hits += 1;
+                        hits++;
                         break;
                     case "o": 
-                        outs += 1;
+                        outs++;
                         break;
                     case "s": 
-                        sacs += 1;
+                        sacs++;
                         break;
                     default: 
-                        walks += 1;
+                        walks++;
                         break;
                 }
 
