@@ -14,6 +14,10 @@ import java.io.FileNotFoundException;
  * @version 1.0.0
  */
 public class BaseballStats {
+
+    /** basePath of the package. */
+    private static String basePath = "src/ca/bcit/comp1510/lab06/";
+    
     /**
      * main program entry.
      * Reads baseball stats from a file and counts
@@ -27,7 +31,6 @@ public class BaseballStats {
         String fileName;
         
         Scanner scan = new Scanner(System.in);
-        String basePath = "src/ca/bcit/comp1510/lab06/";
         
         System.out.print("Enter the name of the input file: ");
         fileName = scan.nextLine();
