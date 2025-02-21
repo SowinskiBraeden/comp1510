@@ -109,15 +109,9 @@ public class Mathematics2 {
      */
     public int sumOfProducts(int i, int j) {
         int sum = 0;
-        if (i >= 0) {
-            for (int k = j; k <= i; k += j) {
-                sum += k;
-            }
-        } else {
-            for (int k = -j; k >= i; k -= j) {
-                sum += k;
-            }
+        for (int k = j; k <= (i < 0 ? i * -1 : i); k += j) {
+            sum += k;
         }
-        return sum;
+        return i < 0 ? sum * -1 : sum;
     }
 }
