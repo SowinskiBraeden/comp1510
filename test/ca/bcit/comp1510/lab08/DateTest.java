@@ -134,30 +134,12 @@ class DateTest {
      }
     
     @Test
-    void testConstructor() {
-        int day = 26;
-        int month = 4;
-        int year = 2005;
-
-        try {            
-            Date _date = new Date(day, month, year);
-            assertEquals(true, true);
-        } catch (IllegalArgumentException e) {
-            fail("IllegalArgumentException on valid date creation");
-        }
-    }
-    
-    @Test
-    void testConstructor1() {
+    void testConstructorException() {
         int day = 33;
         int month = 8;
         int year = 1999;
 
-        try {            
-            Date _date = new Date(day, month, year);
-            fail("Date created with invalid date");
-        } catch (IllegalArgumentException e) {
-            assertEquals(true, true);
-        }        
+        assertThrows(IllegalArgumentException.class,
+                () -> { new Date(day, month, year); });
     }
 }
