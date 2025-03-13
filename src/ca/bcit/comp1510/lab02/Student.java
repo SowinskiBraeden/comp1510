@@ -6,7 +6,7 @@ package ca.bcit.comp1510.lab02;
  * @version 1.0.0
  */
 public class Student {
-    
+
     /**
      * Student holds student info.
      * @param name student name
