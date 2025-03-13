@@ -139,6 +139,7 @@ class DateTest {
         int month = 8;
         int year = 1999;
 
+        // As seen in Chapter 7 slides
         assertThrows(IllegalArgumentException.class,
                 () -> { new Date(day, month, year); });
     }
