@@ -6,6 +6,7 @@ import java.io.FileNotFoundException;
 
 import java.util.List;
 import java.util.ArrayList;
+import java.util.regex.Pattern;
 
 /**
  * <p>This is where you put your description about what this class does. You
@@ -47,7 +48,7 @@ public class WordCounter {
                     }
                 }
                 
-                if (!exists) {
+                if (!exists && Pattern.matches("^[a-zA-Z]+", word)) {
                     words.add(new Word(word));
                 }
             }
