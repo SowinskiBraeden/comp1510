@@ -65,19 +65,15 @@ public class Primes {
      * @param n int number of primes
      * */
     private void calculatePrimes(int n) {
-        List<Integer> numbers = new ArrayList<Integer>();
-
         for (int i = 0; i <= n; i++) {
-            numbers.add(i);
-            primes.add(i, false);
+            primes.add(i, i > 1);
         }
         
-        for (int i = 0; i < numbers.size() - 1; i++) {  
-            if (numbers.get(i) != -1 && i != 0 && i != 1) {
+        for (int i = 2; i <= Math.sqrt(n); i++) {  
+            if (primes.get(i)) {
                 for (int j = 2; j < (n / i) + 1; j++) {
-                    numbers.set(i * j, -1);
+                    primes.set(i * j, false);
                 }
-                primes.set(i, true);
             }
         }
     }
