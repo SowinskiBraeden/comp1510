@@ -23,7 +23,7 @@ public class Primes {
      * @param n int
      */
     public Primes(int n) {
-        primes = new ArrayList<Boolean>(n);
+        primes = new ArrayList<Boolean>();
         calculatePrimes(n);
     }
     
@@ -57,17 +57,7 @@ public class Primes {
      * @return boolean
      */
     public boolean isPrime(int n) {
-        if (n <= 1) {
-            return false;
-        }
-        
-        for (int i = 2; i < n; i++) {
-            if (n % i == 0) {
-                return false;
-            }
-        }
-        
-        return true;
+        return primes.get(n);
     }
     
     /** 
@@ -75,8 +65,20 @@ public class Primes {
      * @param n int number of primes
      * */
     private void calculatePrimes(int n) {
-        for (int i = 0; i < n; i++) {
-            primes.add(isPrime(i));
+        List<Integer> numbers = new ArrayList<Integer>();
+
+        for (int i = 0; i <= n; i++) {
+            numbers.add(i);
+            primes.add(i, false);
+        }
+        
+        for (int i = 0; i < numbers.size() - 1; i++) {  
+            if (numbers.get(i) != -1 && i != 0 && i != 1) {
+                for (int j = 2; j < (n / i) + 1; j++) {
+                    numbers.set(i * j, -1);
+                }
+                primes.set(i, true);
+            }
         }
     }
     
