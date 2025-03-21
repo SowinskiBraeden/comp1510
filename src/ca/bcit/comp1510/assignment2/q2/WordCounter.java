@@ -37,7 +37,9 @@ public class WordCounter {
             lineScan.useDelimiter(" ");
             
             while (lineScan.hasNext()) {
-                String word = lineScan.next().toLowerCase();
+                String word = lineScan.next().
+                        toLowerCase().
+                        replaceAll("[^a-z]", "");
                 
                 boolean exists = false;
                 for (int i = 0; i < words.size() && !exists; i++) {
@@ -47,8 +49,8 @@ public class WordCounter {
                         exists = true;
                     }
                 }
-                
-                if (!exists && Pattern.matches("^[a-zA-Z]+", word)) {
+                                
+                if (!exists && Pattern.matches("^[a-z]+", word)) {
                     words.add(new Word(word));
                 }
             }
