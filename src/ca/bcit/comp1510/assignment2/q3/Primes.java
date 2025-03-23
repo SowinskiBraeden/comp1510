@@ -51,15 +51,6 @@ public class Primes {
         return count;
     }
     
-    /**
-     * isPrime.
-     * @param n int number
-     * @return boolean
-     */
-    public boolean isPrime(int n) {
-        return primes.get(n);
-    }
-    
     /** 
      * calculatePrimes. 
      * @param n int number of primes

@@ -45,7 +45,6 @@ public class WordCounter {
                 for (int i = 0; i < words.size() && !exists; i++) {
                     if (words.get(i).getWord().equals(word)) {
                         words.get(i).increment();
-                        // look I did not use a break statement...
                         exists = true;
                     }
                 }

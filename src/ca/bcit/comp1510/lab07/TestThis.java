@@ -30,7 +30,7 @@ public class TestThis {
     
     /** 
      * Return the largest value in the parameters.
-     * @param a List of integers (use ArrayList<Integer> in test)
+     * @param a List of integers (use ArrayList of Integer in test)
      * @return largest of numbers in List
      */
     public int largest(List<Integer> a) {

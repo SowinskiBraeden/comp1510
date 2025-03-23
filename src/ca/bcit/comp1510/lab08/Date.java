@@ -146,7 +146,8 @@ public record Date(int day, int month, int year) {
         System.out.println("Valid month:  " + validMonth);
         System.out.println("# of Days:    " + daysInMonth);
         System.out.println("Valid day:    " + validDay);
-
+        
         Date newDate = new Date(day, month, year);
+        newDate.year();
     } 
 }
