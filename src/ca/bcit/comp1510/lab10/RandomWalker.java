@@ -146,4 +146,20 @@ public class RandomWalker {
     public int getMaximumDistance() {
         return this.maximumDistance;
     }
+
+    /**
+     * getX coordinate.
+     * @return x
+     */
+    public int getX() {
+        return this.x;
+    }
+    
+    /**
+     * getY coordinate.
+     * @return y
+     */
+    public int getY() {
+        return this.y;
+    }
 }
