@@ -101,12 +101,10 @@ public class Name implements Comparable<Name> {
     public int compareTo(Name n) {
         if (!this.last.equals(n.last)) {
             return this.last.compareTo(n.last);
+        } else if (!this.first.equals(n.first)) {
+            return this.first.compareTo(n.first);
         } else {
-            if (!this.first.equals(n.first)) {
-                return this.first.compareTo(n.first);
-            } else {
-                return this.middle.compareTo(n.middle);
-            }
+            return this.middle.compareTo(n.middle);
         }
     }
     

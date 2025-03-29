@@ -37,15 +37,23 @@ public class Collisions {
         boolean collided = false;
         int stepsTaken = 0;
         
-        for (int i = 0; i < steps && !collided; i++) {
+        for (int i = 0; i < steps; i++) {
             w1.takeStep();
             w2.takeStep();
-            collided = samePosition(w1, w2);
+
+            if (samePosition(w1, w2)) {                
+                collided = true;
+                System.out.println("Collision at (" 
+                        + w1.getX() + ", "
+                        + w1.getY() + ") after " 
+                        + stepsTaken + " steps");
+            }
+            
             stepsTaken++;
         }
-        
-        String message = collided ? "Collision!" : "No Collision.";
-        System.out.println(message);
-        System.out.println("After " + stepsTaken + " steps");
+
+        if (!collided) {
+            System.out.println("No collisions.");
+        }
     }
 }
