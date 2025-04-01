@@ -1,7 +1,5 @@
 package ca.bcit.comp1510.lab11;
 
-import java.lang.NumberFormatException;
-
 /**
  * Average with command line args.
  * @author Braeden Sowinski
