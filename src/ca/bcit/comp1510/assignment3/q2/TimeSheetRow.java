@@ -9,29 +9,26 @@ public class TimeSheetRow {
 
     /** MASK of bits for days of week represented inside hours long. */
     private static final long[] MASK = {
-        0xFFL, 0xFF00L, 0xFF0000L, 
-        0xFF000000L, 0xFF00000000L,
-        0xFF0000000000L, 0xFF000000000000L
+        0xFFL, 0x00L, 0x0000L,
+        0x000000L, 0x00000000L, 0x0000000000L,
+        0x000000000000L, 0x00000000000000L 
     };
 
     /** UMASK to unmask stuff. */
     private static final long[] UMASK = {
-        0xFFFFFFFFFFFFFF00L,
-        0xFFFFFFFFFFFF00FFL,
-        0xFFFFFFFFFF00FFFFL,
-        0xFFFFFFFF00FFFFFFL,
-        0xFFFFFF00FFFFFFFFL,
-        0xFFFF00FFFFFFFFFFL,
+        0xFFFFFFFFFFFFFF00L, 0xFFFFFFFFFFFF00FFL,
+        0xFFFFFFFFFF00FFFFL, 0xFFFFFFFF00FFFFFFL,
+        0xFFFFFF00FFFFFFFFL, 0xFFFF00FFFFFFFFFFL,
         0xFF00FFFFFFFFFFFFL
     };
-    
+ 
     /** DECI to convert hours. */
     private static final float DECI = 10;
     
-    /** baseHex to convert hexidecimal */
+    /** baseHex to convert hexidecimal. */
     private static final int HEX_BASE = 16;
     
-    /** SHIFT by bits */
+    /** SHIFT by bits. */
     private static final int SHIFT = 8;
     
     /** project number as int. */
@@ -52,7 +49,7 @@ public class TimeSheetRow {
         this.hours = 0;
     }
     
-    /**4
+    /**
      * TimeSheetRow constructor.
      * @param projectNumber int
      * @param workPackage String
@@ -143,32 +140,9 @@ public class TimeSheetRow {
      * @param hour float
      */
     public void setHour(int day, float hour) {
-//        long encoded = ((long) (hour * DECI) | MASK[day + 1]) << day * SHIFT;
-//        this.hours = (this.hours & UMASK[day]) | encoded;
-        String hex = Integer.toHexString((int) (hour * DECI));
-        long encoded = Long.parseLong(hex, HEX_BASE) << (day * SHIFT);
+        long encoded = ((long) (hour * DECI) | MASK[day + 1]) << day * SHIFT;
         this.hours = (this.hours & UMASK[day]) | encoded;
     }
     
-    /**
-     * main test encode decode.
-     * @param args unused
-     */
-    public static void main(String[] args) {
-        final Long n = 0X321420372d0b20L;
-        
-        TimeSheetRow t = new TimeSheetRow(
-            0, 
-            "Test", 
-            3.2f, 1.1f, 4.5f, 5.5f, 3.2f, 2.0f, 5.0f
-        );
-        
-        System.out.println(Long.toHexString(t.getHours()));
-//        t.setHour(2, 3.2f);
-//        t.setHour(4, 5.5f);
-        for (int i = 0; i < 7; i++) {
-            t.setHour(i, 3.0f);
-            System.out.print(t.getHour(i) + " ");
-        }
-    }
+    
 }

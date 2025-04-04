@@ -103,5 +103,38 @@ public class TimeSheet {
         this.details.add(row);
     }
     
-    
+    /**
+     * main program entry to show it works.
+     * @param args unused
+     */
+    public static void main(String[] args) {
+        TimeSheet sheet = new TimeSheet();
+        
+        final float hours1 = 2;
+        final float hours2 = 32 / 10;
+        final float hours3 = 38 / 10;
+        
+        final int id3 = 3;
+        
+        sheet.addRow(new TimeSheetRow(
+            1, 
+            "assignment1", 
+            hours1, hours2, hours3
+        ));
+        
+        sheet.addRow(new TimeSheetRow(
+            2, 
+            "assignment2", 
+            hours3, hours2, hours1
+        ));
+        
+        sheet.addRow(new TimeSheetRow(
+            id3, 
+            "assignment3", 
+            hours2, hours3, hours1
+        ));
+        
+        System.out.println(sheet.toString());
+    }
 }
+
