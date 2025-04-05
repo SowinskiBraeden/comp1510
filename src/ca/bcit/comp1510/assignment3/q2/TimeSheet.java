@@ -92,7 +92,11 @@ public class TimeSheet {
      * @return TimeSheet representation
      */
     public String toString() {
-        return "";
+        String data = "";
+        for (int i = 0; i < this.details.size(); i++) {
+            data += this.details.get(i).toString() + "\n";
+        }
+        return data;
     }
 
     /**

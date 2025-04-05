@@ -66,7 +66,7 @@ public class TimeSheetRow {
             encoded += hex;
         }
      
-        this.hours = Long.parseLong(encoded, HEX_BASE);
+        this.hours = Long.parseUnsignedLong(encoded, HEX_BASE);
     }
     
     /**
@@ -102,18 +102,18 @@ public class TimeSheetRow {
     }
     
     /**
-     * setProject name.
+     * setWorkPackage name.
      * @param newWorkPackage string
      */
-    public void setProject(String newWorkPackage) {
+    public void setWorkPackage(String newWorkPackage) {
         this.workPackage = newWorkPackage;
     }
     
     /**
-     * setProject worked.
+     * setHours worked.
      * @param newHours long.
      */
-    public void setProject(long newHours) {
+    public void setHours(long newHours) {
         this.hours = newHours;
     }
     
@@ -122,7 +122,12 @@ public class TimeSheetRow {
      * @return string
      */
     public String toString() {
-        return "";
+        String data = this.project + " " + this.workPackage + " ";
+        final int days = 7;
+        for (int i = 0; i < days; i++) {
+            data += getHour(i) + " ";
+        }
+        return data;
     }
     
     /**
@@ -143,6 +148,4 @@ public class TimeSheetRow {
         long encoded = ((long) (hour * DECI) | MASK[day + 1]) << day * SHIFT;
         this.hours = (this.hours & UMASK[day]) | encoded;
     }
-    
-    
 }
