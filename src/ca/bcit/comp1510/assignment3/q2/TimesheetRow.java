@@ -1,11 +1,12 @@
 package ca.bcit.comp1510.assignment3.q2;
 
 /**
- * TimeSheetRow is a row of TimeSheet.
+ * TimeSheetRow contains hourly information
+ * for a given week.
  * @author Braeden Sowinski
  * @version 1.0.0
  */
-public class TimeSheetRow {
+public class TimesheetRow {
 
     /** MASK of bits for days of week represented inside hours long. */
     private static final long[] MASK = {
@@ -43,7 +44,7 @@ public class TimeSheetRow {
     /**
      * TimeSheetRow no-argument constructor.
      */
-    public TimeSheetRow() {
+    public TimesheetRow() {
         this.project = 0;
         this.workPackage = "";
         this.hours = 0;
@@ -55,7 +56,7 @@ public class TimeSheetRow {
      * @param workPackage String
      * @param hours float...
      */
-    public TimeSheetRow(int projectNumber, String workPackage, float... hours) {
+    public TimesheetRow(int projectNumber, String workPackage, float... hours) {
         this.project = projectNumber;
         this.workPackage = workPackage;
         

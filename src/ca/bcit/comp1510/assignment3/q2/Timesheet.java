@@ -6,11 +6,12 @@ import java.util.List;
 import java.util.ArrayList;
 
 /**
- * TimeSheet data.
+ * TimeSheet stores the amount of hours worked
+ * during a given week period for an employee.
  * @author Braeden Sowinski
  * @version 1.0.0
  */
-public class TimeSheet {
+public class Timesheet {
 
     /** empNum is employee number. */
     private String empNum;
@@ -19,15 +20,15 @@ public class TimeSheet {
     private LocalDate endWeek;
     
     /** details of TimeSheetRows. */
-    private List<TimeSheetRow> details;
+    private List<TimesheetRow> details;
 
     /**
      * TimeSheet no-argument constructor.
      */
-    public TimeSheet() {
+    public Timesheet() {
         this.empNum = "";
         this.endWeek = null;
-        this.details = new ArrayList<TimeSheetRow>();
+        this.details = new ArrayList<TimesheetRow>();
     }
 
     /**
@@ -35,10 +36,10 @@ public class TimeSheet {
      * @param empNum string of employee number
      * @param endWeek date
      */
-    public TimeSheet(String empNum, LocalDate endWeek) {
+    public Timesheet(String empNum, LocalDate endWeek) {
         this.empNum = empNum;
         this.endWeek = endWeek;
-        this.details = new ArrayList<TimeSheetRow>();
+        this.details = new ArrayList<TimesheetRow>();
     }
     
     /**
@@ -61,7 +62,7 @@ public class TimeSheet {
      * getDetails.
      * @return details List of TimeSheetRow
      */
-    public List<TimeSheetRow> getDetails() {
+    public List<TimesheetRow> getDetails() {
         return this.details;
     }
     
@@ -103,7 +104,7 @@ public class TimeSheet {
      * addRow to details array.
      * @param row TimeSheetRow
      */
-    public void addRow(TimeSheetRow row) {
+    public void addRow(TimesheetRow row) {
         this.details.add(row);
     }
     
@@ -112,7 +113,7 @@ public class TimeSheet {
      * @param args unused
      */
     public static void main(String[] args) {
-        TimeSheet sheet = new TimeSheet();
+        Timesheet sheet = new Timesheet();
         
         final float hours1 = 2;
         final float hours2 = 32 / 10;
@@ -120,19 +121,19 @@ public class TimeSheet {
         
         final int id3 = 3;
         
-        sheet.addRow(new TimeSheetRow(
+        sheet.addRow(new TimesheetRow(
             1, 
             "assignment1", 
             hours1, hours2, hours3
         ));
         
-        sheet.addRow(new TimeSheetRow(
+        sheet.addRow(new TimesheetRow(
             2, 
             "assignment2", 
             hours3, hours2, hours1
         ));
         
-        sheet.addRow(new TimeSheetRow(
+        sheet.addRow(new TimesheetRow(
             id3, 
             "assignment3", 
             hours2, hours3, hours1

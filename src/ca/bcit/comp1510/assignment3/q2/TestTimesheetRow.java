@@ -1,17 +1,18 @@
 package ca.bcit.comp1510.assignment3.q2;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
 
-class TestTimeSheetRow {
+class TestTimesheetRow {
 
     @Test
     void testEmptyConstructor() {
-        TimeSheetRow row = new TimeSheetRow();
+        TimesheetRow row = new TimesheetRow();
         
         boolean c1 = row.getProject() == 0;
-        boolean c2 = row.getWorkPackage() == "";
+        boolean c2 = row.getWorkPackage().equals("");
         boolean c3 = row.getHours() == 0;
         
         assertTrue(c1 && c2 && c3);
@@ -22,7 +23,7 @@ class TestTimeSheetRow {
         final int id = 984757;
         final String pack = "abc2xyz";
        
-        TimeSheetRow row = new TimeSheetRow(
+        TimesheetRow row = new TimesheetRow(
             id,
             pack,
             0
@@ -39,7 +40,7 @@ class TestTimeSheetRow {
         final int id = 984757;
         final String pack = "abc2xyz";
         
-        TimeSheetRow row = new TimeSheetRow(
+        TimesheetRow row = new TimesheetRow(
             id,
             pack,
             0
@@ -53,7 +54,7 @@ class TestTimeSheetRow {
         final int id = 984757;
         final String pack = "abc2xyz";
         
-        TimeSheetRow row = new TimeSheetRow(
+        TimesheetRow row = new TimesheetRow(
             id,
             pack,
             0
@@ -71,7 +72,7 @@ class TestTimeSheetRow {
         final float hours2 = 32 / 10;
         final float hours3 = 38 / 10;
         
-        TimeSheetRow row = new TimeSheetRow(
+        TimesheetRow row = new TimesheetRow(
             id,
             pack,
             hours1, hours2, hours3
@@ -84,7 +85,7 @@ class TestTimeSheetRow {
     
     @Test
     void testSetProject() {
-        TimeSheetRow row = new TimeSheetRow();
+        TimesheetRow row = new TimesheetRow();
         
         final int id = 984757;
         
@@ -95,7 +96,7 @@ class TestTimeSheetRow {
     
     @Test
     void testSetWorkPackage() {
-        TimeSheetRow row = new TimeSheetRow();
+        TimesheetRow row = new TimesheetRow();
         
         final String pack = "abc2xyz";
         
@@ -106,7 +107,7 @@ class TestTimeSheetRow {
     
     @Test
     void testSetHours() {
-        TimeSheetRow row = new TimeSheetRow();
+        TimesheetRow row = new TimesheetRow();
         
         final long hours = 12345678;
         
@@ -124,7 +125,7 @@ class TestTimeSheetRow {
         final float hours2 = 32 / 10;
         final float hours3 = 38 / 10;
         
-        TimeSheetRow row = new TimeSheetRow(
+        TimesheetRow row = new TimesheetRow(
             id,
             pack,
             hours1, hours2, hours3
@@ -145,7 +146,7 @@ class TestTimeSheetRow {
         final float hours2 = 32 / 10;
         final float hours3 = 38 / 10;
         
-        TimeSheetRow row = new TimeSheetRow(
+        TimesheetRow row = new TimesheetRow(
             id,
             pack,
             hours1, hours2, hours3
@@ -163,7 +164,7 @@ class TestTimeSheetRow {
         final float hours2 = 32 / 10;
         final float hours3 = 38 / 10;
         
-        TimeSheetRow row = new TimeSheetRow(
+        TimesheetRow row = new TimesheetRow(
             id,
             pack,
             hours1, hours2, hours3
